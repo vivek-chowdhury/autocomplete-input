@@ -1,0 +1,35 @@
+
+.search-bar {
+  margin-top: 2%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row-reverse;
+  align-items: flex-start;
+}
+
+.search-button {
+  width: 300px;
+}
+
+.search-input {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+
+
+@media (prefers-reduced-motion: no-preference) {
+  /* .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  } */
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

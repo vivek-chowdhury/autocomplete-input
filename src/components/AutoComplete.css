@@ -1,0 +1,9 @@
+.auto-container {
+    margin-top: -4px;
+    width: 500px;
+}
+
+.hint-container {
+    margin-left: 10px;
+    border-color: black;
+}
