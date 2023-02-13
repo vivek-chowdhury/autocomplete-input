@@ -1,0 +1,8 @@
+.file-container {
+    display: inline-block;
+    width: 100%;
+    cursor: pointer;
+}
+.child-container {
+    margin-left: 10px;
+}

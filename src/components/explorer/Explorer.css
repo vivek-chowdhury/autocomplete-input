@@ -1,0 +1,12 @@
+.explorer {
+    display: inline-block;
+    font-weight: bold;
+    color: white;
+    background-color: chocolate;
+    width: 100%;
+}
+
+.explorer-container {
+    height: 100%;
+    border: 1px solid black;
+}

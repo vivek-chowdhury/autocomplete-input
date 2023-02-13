@@ -1,14 +1,15 @@
 import { useEffect, useState } from 'react';
 import './App.css';
-import Button from './components/Button';
 import { fetchProducts } from './services/productService';
+import { AutoComplete } from './components/auto-complete/AutoComplete';
+import Button from './components/auto-complete/Button';
 import useDebouncer from './hooks/useDebouncer';
-import { AutoComplete } from './components/AutoComplete';
+import Explorer from './components/explorer/Explorer';
 
 function App() {
   const [searchKey, setSearchKey] = useState('');
   const [products, setProducts] = useState([]);
-  const [filteredList, setFilteredList] = useState([]);
+  const [filteredList, setFilteredList] = useState([]); 
 
   useEffect(() => {
     fetchProducts().then((data) => {
@@ -37,18 +38,23 @@ function App() {
 
   return (
     <div className="App">
-      <span className="search-bar">
+      <span className='container'>
+        <span id="leftSection" className='leftSection'>
+          <Explorer/>
+        </span>
+        <span id='rightSection'></span>
+      </span>
+      <span id="topbar" className="search-bar">
         <AutoComplete 
-          uid="searchInput" 
-          className="search-input"
-          onInputChange={onSearchInputChange} 
-          hints={filteredList}
-          inputValue={searchKey}/>
-        <Button 
-          uid="searchButton" 
-          className="search-button"
-          onSearchClick={onSearchButtonSelected} 
-          label="Search"/>
+              uid="searchInput"
+              onInputChange={onSearchInputChange} 
+              hints={filteredList}
+              inputValue={searchKey}/>
+          <Button 
+                uid="searchButton" 
+                className="search-button"
+                onSearchClick={onSearchButtonSelected} 
+                label="Search"/>
       </span>
     </div>
   );
